@@ -44,7 +44,7 @@ plt.figure(figsize=(10, 6))
 for cluster in pc_df['Cluster'].unique():
     cluster_data = pc_df[pc_df['Cluster'] == cluster]
     plt.scatter(cluster_data['PC1'], cluster_data['PC2'], label=f'Cluster {cluster}')
-plt.title('K-Means Clustering of Plant-Microbe Interaction Data')
+plt.title('K-Means Clustering of Cancer Diagnosis')
 plt.xlabel('Principal Component 1')
 plt.ylabel('Principal Component 2')
 plt.legend()
