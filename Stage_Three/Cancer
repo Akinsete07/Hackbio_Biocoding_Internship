@@ -7,9 +7,9 @@ from sklearn.decomposition import PCA
 # Load the dataset
 dfe = pd.read_csv('https://raw.githubusercontent.com/PacktPublishing/Machine-Learning-in-Biotechnology-and-Life-Sciences/refs/heads/main/datasets/dataset_wisc_sd.csv')
 
-# Display the first few rows
+# Define the data, sort to find columns that contain string
 print(dfe.info())
-# Dropping a object  columns 
+# Dropping out object  columns i.e columns that contain strings
 dfb = dfe.drop(columns=['diagnosis'])
 dfc = dfb.drop(columns=['concave points_worst'])
 # Drop rows with missing values
