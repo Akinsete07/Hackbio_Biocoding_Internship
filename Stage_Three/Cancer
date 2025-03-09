@@ -1,1 +1,57 @@
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+from sklearn.cluster import KMeans
+import matplotlib.pyplot as plt
+from sklearn.decomposition import PCA
+
+# Load the dataset
+dfe = pd.read_csv('https://raw.githubusercontent.com/PacktPublishing/Machine-Learning-in-Biotechnology-and-Life-Sciences/refs/heads/main/datasets/dataset_wisc_sd.csv')
+
+# Display the first few rows
+print(dfe.info())
+# Dropping a object  columns 
+dfb = dfe.drop(columns=['diagnosis'])
+dfc = dfb.drop(columns=['concave points_worst'])
+# Drop rows with missing values
+df = dfc.dropna()
+print(df.info())
+
+# Initialize the scaler
+scaler = StandardScaler()
+
+# Fit and transform the data
+scaled_data = scaler.fit_transform(df)
+
+# Initialize KMeans with 3 clusters
+kmeans = KMeans(n_clusters=3, random_state=42)
+
+# Fit the model
+kmeans.fit(scaled_data)
+
+# Add the cluster labels to the original dataframe
+df['Cluster'] = kmeans.labels_
+
+# Reduce dimensions to 2D for visualization
+pca = PCA(n_components=2)
+principal_components = pca.fit_transform(scaled_data)
+
+# Create a DataFrame with the principal components
+pc_df = pd.DataFrame(data=principal_components, columns=['PC1', 'PC2'])
+pc_df['Cluster'] = df['Cluster']
+
+# Plot the clusters
+plt.figure(figsize=(10, 6))
+for cluster in pc_df['Cluster'].unique():
+    cluster_data = pc_df[pc_df['Cluster'] == cluster]
+    plt.scatter(cluster_data['PC1'], cluster_data['PC2'], label=f'Cluster {cluster}')
+plt.title('K-Means Clustering of Plant-Microbe Interaction Data')
+plt.xlabel('Principal Component 1')
+plt.ylabel('Principal Component 2')
+plt.legend()
+plt.show()
+
+# Calculate the mean values of each feature per cluster
+cluster_means = df.groupby('Cluster').mean()
+print(cluster_means)
+
 
