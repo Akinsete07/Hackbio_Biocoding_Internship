@@ -9,7 +9,7 @@ HackBio Biocoding Internship
 Stage Two Task
 '''
 #__________________________________________________________________________________________________________________________________
-
+#Kendra
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -112,6 +112,7 @@ plt.show()
 
 #Observations: Box plots seem to do a better job of visualizing how Wild-type (WT) strains appear to grow faster and reach carrying capacity earlier than mutant (MUT) strains.
 #______________________________________________________________________________________________________________________________________________________________________
+#Akinsete
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -175,6 +176,7 @@ Funtions of Top 5 Upreguated Genes:
 """
 _______________________________________________________________________________________________________________________________________________
 """
+#Lateefat
 import pandas as pd
 # Read the file
 data_source = "https://raw.githubusercontent.com/HackBio-Internship/2025_project_collection/refs/heads/main/Python/Dataset/Pesticide_treatment_data.txt"
@@ -251,6 +253,7 @@ The plots show the trend of the metabolites over time. Specifically:
 4. The trends observed can help identify which metabolites are most affected by the pesticide treatment and may provide insights into the underlying biological mechanisms.
 '''
 #__________________________________________________________________________________________________________________________________________________
+#Dami
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns                                           #import data
