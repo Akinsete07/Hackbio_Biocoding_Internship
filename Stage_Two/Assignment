@@ -157,7 +157,6 @@ print("Top 5 Upregulated Genes:")
 print(upregulated_genes.head())
 print("Top 5 Downregulated Genes:")
 print(downregulated_genes.head())
-#Video:https://drive.google.com/drive/folders/1zutVcdOfFRuXEHzUajlgZ3BwhKMItycd
 '''
 Funtions of Top 5 Upreguated Genes:
  EMILIN2 – Involved in cell adhesion, apoptosis, and extracellular matrix organization. Plays a role in cancer progression and immune response.
